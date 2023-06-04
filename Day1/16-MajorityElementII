@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+
+vector<int> majorityElementII(vector<int> &arr)
+{
+    // Write your code here.
+    //The approach which is coming in my brain is to use hashmap to store the frequincy because we have to find all the majority elements and hence vooting algo will not work here.
+    //Let me first solve by this appraoch and then try to learn new appraoches.
+    unordered_map<int,int>um;
+    for(auto i:arr){
+        um[i]++;
+    }
+    int check=floor(arr.size()/3.0);
+    vector<int>ans;
+    for(auto i:um){
+        if(i.second>check)ans.push_back(i.first);
+    }
+    return ans;
+}
